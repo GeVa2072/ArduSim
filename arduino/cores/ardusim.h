@@ -32,7 +32,15 @@
 
 #else
 #include   <unistd.h>
+
+#define itoa(value, string, radix) sprintf(string, radix == 16 ? "%X" : "%d", value)
+#define ltoa(value, string, radix) sprintf(string, radix == 16 ? "%X" : "%ld", value)
+#define utoa(value, string, radix) sprintf(string, radix == 16 ? "%X" : "%u", value)
+#define ultoa(value, string, radix) sprintf(string, radix == 16 ? "%X" : "%ld", value)
+
 #endif
+
+#include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
 
