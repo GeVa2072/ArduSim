@@ -1,7 +1,7 @@
 AR=ar
 ARFLAGS=rcs
 CXX=g++
-CXXFLAGS= -v -shared -g 
+CXXFLAGS= -g 
 CXXFLAGS+= -Wall -fexceptions -x c++ 
 CXXFLAGS+= -DARDUSIM -DENABLE_API_NAME -D__AVR_ATmega328P__ -DARDUINO=100 -Wsign-compare
 INCLUDEDIRS= arduino/variants/standard arduino\cores include
@@ -9,7 +9,7 @@ INCLUDES= $(patsubst %,-I%,$(INCLUDEDIRS))
 LDFLAGS=-lWinmm
 
 ARDUSIM: MAIN.o
-	#@$(AR) $(ARFLAGS) ardusim.a *.o
+	@$(AR) $(ARFLAGS) ardusim.a *.o
 
 MAIN.o:
 	@$(CXX) $(CXXFLAGS) $(INCLUDES) $(LDFLAGS) \
@@ -19,7 +19,7 @@ MAIN.o:
 	arduino/cores/wiring.c \
 	arduino/cores/wiring_digital.c \
 	arduino/cores/wiring_private.h \
-	arduino/variants/standard\pins_arduino.h \
+	arduino/variants/standard/pins_arduino.h \
 	include/avr/common.h \
 	include/avr/interrupt.h \
 	include/avr/io.h \
