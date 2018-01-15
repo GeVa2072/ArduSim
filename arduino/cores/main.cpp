@@ -17,7 +17,7 @@ void sei()
     fprintf(stderr, "[MCU] Global interrupt enabled\n");
 }
 
-int main(void)
+int main(int argc, char** argv)
 {
     unsigned int loopcount = 0;
 
