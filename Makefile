@@ -3,7 +3,7 @@ ARFLAGS=rcs
 CXX=g++
 CXXFLAGS= -g 
 CXXFLAGS+= -Wall -fexceptions -x c++ 
-CXXFLAGS+= -DARDUSIM -DENABLE_API_NAME -D__AVR_ATmega328P__ -DARDUINO=100 -Wsign-compare
+CXXFLAGS+= -DARDUSIM -DENABLE_API_NAME -D__AVR_ATmega328P__ -DARDUINO=100 -Wsign-compare  -D__USING_MINT8
 INCLUDEDIRS= arduino/variants/standard arduino/cores include
 INCLUDES= $(patsubst %,-I%,$(INCLUDEDIRS))
 ifeq ($(OS),Windows_NT)
