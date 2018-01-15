@@ -12,6 +12,21 @@ ARDUSIM: MAIN.o
 	@$(AR) $(ARFLAGS) ardusim.a *.o
 
 MAIN.o:
+	echo @$(CXX) $(CXXFLAGS) $(INCLUDES) $(LDFLAGS) \
+	arduino/cores/Arduino.h \
+	arduino/cores/ardusim.h \
+	arduino/cores/main.cpp \
+	arduino/cores/wiring.c \
+	arduino/cores/wiring_digital.c \
+	arduino/cores/wiring_private.h \
+	arduino/variants/standard/pins_arduino.h \
+	include/avr/common.h \
+	include/avr/interrupt.h \
+	include/avr/io.h \
+	include/avr/lock.h \
+	include/avr/pgmspace.h \
+	include/avr/sfr_defs.h \
+	include/avr/version.h 
 	@$(CXX) $(CXXFLAGS) $(INCLUDES) $(LDFLAGS) \
 	arduino/cores/Arduino.h \
 	arduino/cores/ardusim.h \
