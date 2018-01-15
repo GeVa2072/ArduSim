@@ -1,7 +1,7 @@
 AR=ar
 ARFLAGS=rcs
 CXX=g++
-CXXFLAGS= -c -g 
+CXXFLAGS= -v -shared -g 
 CXXFLAGS+= -Wall -fexceptions -x c++ 
 CXXFLAGS+= -DARDUSIM -DENABLE_API_NAME -D__AVR_ATmega328P__ -DARDUINO=100 -Wsign-compare
 INCLUDEDIRS= arduino/variants/standard arduino\cores include
@@ -9,7 +9,7 @@ INCLUDES= $(patsubst %,-I%,$(INCLUDEDIRS))
 LDFLAGS=-lWinmm
 
 ARDUSIM: MAIN.o
-	@$(AR) $(ARFLAGS) ardusim.a *.o
+	#@$(AR) $(ARFLAGS) ardusim.a *.o
 
 MAIN.o:
 	@$(CXX) $(CXXFLAGS) $(INCLUDES) $(LDFLAGS) \
