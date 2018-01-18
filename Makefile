@@ -23,7 +23,7 @@ MAIN.o:
 	arduino/cores/HID.cpp \
 	arduino/cores/new.cpp \
 	arduino/cores/Tone.cpp \
-	arduino/cores/WMath.cpp.h \
+	arduino/cores/WMath.cpp \
 	arduino/cores/Stream.cpp \
 	arduino/cores/USBCore.cpp \
 	arduino/cores/WString.cpp \
