@@ -2,12 +2,13 @@ AR=ar
 ARFLAGS=rcs
 CXX=g++
 CXXFLAGS= -g -c
-CXXFLAGS+= -Wall -fexceptions -x c++ 
+CXXFLAGS+= -Wall -fexceptions -x c++
 CXXFLAGS+= -DARDUSIM -DENABLE_API_NAME -DF_CPU=8000000L -D__AVR_ATmega168P__ -DARDUINO=100 -Wsign-compare  -D__USING_MINT8
 INCLUDEDIRS= arduino/variants/standard arduino/cores include
 INCLUDES= $(patsubst %,-I%,$(INCLUDEDIRS))
 ifeq ($(OS),Windows_NT)
-    LDFLAGS=-lWinmm
+    LDFLAGS= -lWinmm 
+    CXXFLAGS+= -DWIN32 
 endif
 
 ARDUSIM: MAIN.o

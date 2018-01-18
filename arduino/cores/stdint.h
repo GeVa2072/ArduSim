@@ -30,8 +30,14 @@ typedef short  int16_t;
 typedef unsigned short  uint16_t;
 typedef int  int32_t;
 typedef unsigned   uint32_t;
-//typedef long long  int64_t;
+#ifndef _INT64_T_DECLARED
+typedef long long  int64_t;
+#define _INT64_T_DECLARED
+#endif
+#ifndef _UINT64_T_DECLARED
 typedef unsigned long long   uint64_t;
+#define _UINT64_T_DECLARED
+#endif
 
 /* 7.18.1.2  Minimum-width integer types */
 typedef signed char int_least8_t;
@@ -63,7 +69,10 @@ typedef unsigned long long   uint_fast64_t;
 #ifdef _WIN64
   typedef __int64 intptr_t;
 #else
-  //typedef int intptr_t;
+  #ifndef _INTPTR_T_DECLARED
+  typedef int intptr_t;
+  #define _INTPTR_T_DECLARED
+  #endif
 #endif
 #endif
 
@@ -72,14 +81,23 @@ typedef unsigned long long   uint_fast64_t;
 #ifdef _WIN64
   typedef unsigned __int64 uintptr_t;
 #else
-  typedef unsigned int uintptr_t;
+    #ifndef _UINTPTR_T_DECLARED
+    typedef unsigned int uintptr_t;
+    #define _UINTPTR_T_DECLARED
+    #endif
 #endif
 #endif
 
 /* 7.18.1.5  Greatest-width integer types */
+#ifndef _INTMAX_T_DECLARED
 typedef long long  intmax_t;
-typedef unsigned long long uintmax_t;
+#define _INTMAX_T_DECLARED
+#endif
 
+#ifndef _UINTMAX_T_DECLARED
+typedef unsigned long long uintmax_t;
+#define _UINTMAX_T_DECLARED
+#endif
 /* 7.18.2  Limits of specified-width integer types */
 #if !defined ( __cplusplus) || defined (__STDC_LIMIT_MACROS)
 
