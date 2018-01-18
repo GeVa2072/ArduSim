@@ -1,6 +1,6 @@
 language: cpp
 
-install:
+script:
   - make
 notifications:
   email:
