@@ -28,8 +28,7 @@ MAIN.o:
 	arduino/cores/USBCore.cpp \
 	arduino/cores/WString.cpp \
 	arduino/cores/IPAddress.cpp \
-	arduino/cores/HardwareSerial.cpp \
-	sketch/sketch.cpp
+	arduino/cores/HardwareSerial.cpp
 	
 clean:
 	@rm *.o *.a *.o~ *.a~
